@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: rmlganesh07/python-app
   pullPolicy: IfNotPresent
-  tag: "0e3088"
+  tag: "d1754c"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

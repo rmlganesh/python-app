@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: rmlganesh07/python-app
+  repository: rmlganesh/python-app
   pullPolicy: IfNotPresent
   tag: "d1754c"
 imagePullSecrets: []

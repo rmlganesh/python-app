@@ -6,6 +6,8 @@ on:
       - src/**
     branches:
       - main
+permissions:
+  contents: write
 
 jobs:
   ci:
@@ -37,6 +39,8 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Install yq
         run: |
@@ -51,7 +55,8 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          message: 'Updates values.yaml with commit ${{needs.ci.outputs.commit_id}}'
+          message: 'Updates values.yaml with commit ${{ needs.ci.outputs.commit_id }}'
+          github_token: ${{ secrets.GH_PAT }}
 
       - name: Install argocd
         shell: bash
